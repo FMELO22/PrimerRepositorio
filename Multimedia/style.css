@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: inherit;
+    list-style: none;
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+
+body {
+    font-size: 12px;
+    min-height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    letter-spacing: 1.4px;
+
+}
+
+#fuckyoubootstrap {
+    color: black;
+    text-decoration: none;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 0.6em 1.7em;
+    border-radius: 0.3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+    /* SEPARAR LOGO Y MENU */
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /* ESTILO */
+    padding: 1.5em 2em;
+    box-shadow: 0 0 20px 0 black;
+}
+
+nav {
+    display: flex;
+    gap: 1em;
+    
+    
+}
+
+.hero {
+    background: url("file:///Users/filipe/Documents/Desarrollo%20Web/Tsting/Multimedia/img1.jpg") no-repeat center/cover;
+    height: 80vh;
+    display: grid;
+    place-content: center;
+    /* ESTO CENTRA LOS HIJOS DEL PADRE VERTICAL Y HORIZONTALMENTE */
+}
+
+.hero-txt {
+    text-align: center;
+    color: rgb(252, 249, 249);
+}
+
+.hero-txt h1>span {
+    margin-top: 0.7em;
+    display: block;
+    /* FILA NUEVA */
+    /* REDUCIR TIPOGRAFIA Y NEGRITA */
+    font-size: 1.5em;
+    font-weight: 800;
+    line-height: 3.6em;
+}
+
+.hero .btn {
+    margin-top: 1.3em;
+    background: linear-gradient(45deg, #fbfdcb 0%, #dade9f 47%, #47ad50 95%);
+    color: black;
+}
+
+
+/* CARDS */
+
+.productos {
+    padding: 3em;
+}
+
+.productosStore {
+    padding: 3em;
+    margin-top: 5em;
+}
+
+.TituloStore {
+    display: grid;
+    text-align: center;
+    margin-top: 10em;
+    text-decoration: underline black 0.2em;
+    text-underline-offset: 0.3em;
+}
+
+.title-c {
+    text-align: center;
+    margin-bottom: 1.5em;
+    text-decoration: underline #78db74 0.2em;
+    /* SEPARA EL SUBRAYADO DEL TEXTO */
+    text-underline-offset: 0.3em;
+}
+
+/* CONTENEDOR DE TARJETAS RESPONSIVE CON GRID */
+.contenedor {
+    display: grid;
+    /* 	-------------AL USAR GRID, LA ULTIMA FILA NO QUEDA CENTRADA-------------
+	REPEAT-> (cantidad de columnas, misma medida) -> repeat(2,200px) crea 2 columnas/filas de 200px.
+	AUTO-FIT-> GRID CREA TANTAS COLUMNAS COMO ITEMS.
+	--> AUTO-FIT PUEDE CAMBIARSE POR AUTO-FILL QUE SIGUE CREANDO COLUMNAS AUNQUE YA USO TODOS LOS ITEMS.
+	MINMAX-> CADA COLUMNA TIENE COMO MÍNIMO XXX y COMO MÁXIMO UNA FRACCIÓN*/
+
+    /* 	repeat (numero de veces que repite, medida) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+}
+
+
+/* TARJETAS CON FLEX*/
+.card {
+    display: flex;
+    flex-flow: row;
+    border-radius: 0.3em;
+    overflow: hidden;
+    /*PARA QUE LA FOTO TENGA EL BORDER-RADIUS ARRIBA*/
+    box-shadow: 0 10px 25px -10px black;
+    height: 200px;
+    transition: 300ms ease-in-out;
+    /* TRANSICIÓN PARA EL EFECTO DEL :HOVER */
+    /* 	 */
+}
+
+
+
+/* TARJETA CRECE DE TAMAÑO CON HOVER */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px -10px black;
+}
+
+.card-img {
+    width: 100%;
+    flex-basis: 200px;
+    /* FLEX SE USA PARA DARLE A LA IMAGEN UN ALTO MINIMO DE 200PX */
+}
+
+/* ID PARA DAR LAS IMAGENES DE CADA TARJETA */
+#producto-01 {
+    background: url("file:///Users/filipe/Documents/Desarrollo%20Web/Tsting/Multimedia/Socks3.jpeg") no-repeat 50% 20% / cover;
+}
+
+#producto-02 {
+    background: url("file:///Users/filipe/Documents/Desarrollo%20Web/Tsting/Multimedia/Socks1.jpeg") no-repeat 50% 60% / cover;
+}
+
+#producto-03 {
+    background: url("  file:///Users/filipe/Documents/Desarrollo%20Web/Tsting/Multimedia/Socks2.jpeg") no-repeat 50% 60% / cover;
+}
+
+
+.card-txt {
+    /* FLEX PARA QUE EL TITULO SIEMPRE ESTE ARRIBA Y EL BOTON ABAJO */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    flex: 1;
+    /* ESTE --FLEX-- ES PORQUE EL CARD-TXT ES UN FLEX-ITEM DE .CARD, DE ESTA FORMA EL CARD-TXT CRECE EL DOBLE QUE LA IMAGEN */
+    padding: 1.5em;
+    text-align: center;
+}
+
+.card-txt .btn {
+    font-size: 0.8em;
+    background: linear-gradient(45deg, #fbfdcb 0%, #dade9f 47%, #47ad50 95%);
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: baseline;
+    /* ESTILO */
+    padding: 0.5em 2em;
+    background: url("") no-repeat bottom/cover;
+}
+
+
+
+footer .redes {
+    text-align: right;
+}
+
+footer .redes h3 {
+    margin-bottom: 0.7vh;
+}
+
+/* UL CON FLEX */
+footer .redes ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
+/* STORE */
+
+.Contenedor {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-evenly;
+}
+
+
+
+
+
+
+/* CONTACT US */
+
+.background {
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+}
+
+.screen {
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 15px;
+}
+
+.screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+}
+
+.screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4d4d4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+    margin-right: auto;
+}
+
+.screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: white;
+}
+
+.screen-header-button.close {
+    background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+    background: #e8e925;
+}
+
+.screen-header-button.minimize {
+    background: #74c54f;
+}
+
+.screen-header-right {
+    display: flex;
+}
+
+.screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+}
+
+.screen-body {
+    display: flex;
+}
+
+.screen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+
+.screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #f8f8f8;
+    font-size: 26px;
+}
+
+.app-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #ea1d6f;
+}
+
+.app-contact {
+    margin-top: auto;
+    font-size: 8px;
+    color: #888;
+}
+
+.app-form-group {
+    margin-bottom: 15px;
+}
+
+.app-form-group.message {
+    margin-top: 40px;
+}
+
+.app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+    color: #666;
+}
+
+.app-form-control:focus {
+    border-bottom-color: #ddd;
+}
+
+.app-form-button {
+    background: none;
+    border: none;
+    color: #ea1d6f;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-form-button:hover {
+    color: #b9134f;
+}
+
+
+.dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+/* GALERIA CON BOOSTRAP */
+
+#galeria .col-lg-4 {
+    margin: 0;
+    padding: 15px;
+}
+
+#galeria img {
+    height: 80%;
+    width: 350px;
+
+}
+
+#galeria img:hover {
+    border: 5px solid white;
+}
+
+#imgCarusel {
+    height: 200px;
+}
+
+
+@media screen and (max-width: 520px) {
+    .screen-body {
+        flex-direction: column;
+    }
+
+    .screen-body-item.left {
+        margin-bottom: 30px;
+    }
+
+    .app-title {
+        flex-direction: row;
+    }
+
+    .app-title span {
+        margin-right: 12px;
+    }
+
+    .app-title:after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .screen-body {
+        padding: 40px;
+    }
+
+    .screen-body-item {
+        padding: 0;
+    }
+
+    @media only screen and (max-width: 500px) {
+        footer {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        footer .redes ul {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
